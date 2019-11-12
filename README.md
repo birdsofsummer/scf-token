@@ -60,7 +60,7 @@ get /parse/?token=xxxx
 
 ```
 
-# [template.yaml] 配置文件(https://github.com/birdsofsummer/scf-token/blob/master/template.yaml)
+# [template.yaml](https://github.com/birdsofsummer/scf-token/blob/master/template.yaml 配置文件)
  	
 ```yaml
     TOKEN_KEY: "The signing/public key is part of the JSON Web Token which the application client exchanges with the server. Each app has a unique key which allows it to identify authenticated client requests. You must keep track of your key for when you are ready to start creating JWTs."
