@@ -21,7 +21,7 @@ curl 'https://service-gdl2ihc7-1252957949.ap-shanghai.apigateway.myqcloud.com/re
                 
 ##  解析
 
-get /parse/?token=xxxx
+get /parse?token=xxxx
   
 ```bash
 
