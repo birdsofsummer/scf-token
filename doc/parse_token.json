@@ -1,0 +1,17 @@
+{
+  "errorCode": 0,
+  "errorMessage": "",
+  "ok": true,
+  "data": {
+    "data": {
+      "user": "admin",
+      "password": "123456"
+    },
+    "alg": "HS256",
+    "typ": "JWT",
+    "aud": "aaaa",
+    "sub": "cccc",
+    "exp": 1573627211,
+    "iat": 1573540811
+  }
+}

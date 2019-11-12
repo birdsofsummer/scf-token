@@ -1,0 +1,52 @@
+Resources:
+  default:
+    Type: TencentCloud::Serverless::Namespace
+    token:
+      Type: TencentCloud::Serverless::Function
+      Properties:
+        CodeUri: ./
+        Type: Event
+        Description: token
+        Role: QCS_SCFExcuteRole
+        Environment:
+          Variables:
+            TOKEN_KEY: "The signing/public key is part of the JSON Web Token which the application client exchanges with the server. Each app has a unique key which allows it to identify authenticated client requests. You must keep track of your key for when you are ready to start creating JWTs."
+            TOKEN_LIFE: "86400"
+            AUD: "aaaa"
+            SUB: "cccc"
+        Handler: index.main_handler
+        MemorySize: 128
+        Runtime: Nodejs8.9
+        Timeout: 30
+        #VpcConfig:
+        #    VpcId: 'vpc-qdqc5k2p'
+        #    SubnetId: 'subnet-pad6l61i'
+        Events:
+        #    timer:
+        #        Type: Timer
+        #        Properties:
+        #            CronExpression: '*/5 * * * *'
+        #            Enable: True
+        #    cli-appid.cos.ap-beijing.myqcloud.com: # full bucket name
+        #        Type: COS
+        #        Properties:
+        #            Bucket: cli-appid.cos.ap-beijing.myqcloud.com
+        #            Filter:
+        #                Prefix: filterdir/
+        #                Suffix: .jpg
+        #            Events: cos:ObjectCreated:*
+        #            Enable: True
+        #    topic:            # topic name
+        #        Type: CMQ
+        #        Properties:
+        #            Name: qname
+            token_apigw:  # ${FunctionName} + '_apigw'
+                Type: APIGW
+                Properties:
+                    StageName: release
+                    ServiceId:
+                    HttpMethod: ANY
+
+Globals:
+  Function:
+    Timeout: 10

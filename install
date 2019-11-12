@@ -1,0 +1,2 @@
+# scf deploy -n token -f -r ap-shanghai -ns game
+scf deploy -n token --skip-event -f -r ap-shanghai -ns game
